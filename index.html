@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Te amo vida</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="src/output.css" rel="stylesheet">
-
+    <script src="script.js" defer></script>
     <style>
         :root{
+            overflow: hidden;
             scroll-behavior: smooth;
         }
         body{
@@ -35,7 +36,7 @@
             transform: translateY(0);
 
         }
-        .heart-wrapler .heart{
+        .heart-wrapler #heart{
             
             border-radius: 5rem 5rem 16rem 16rem;
             animation: pulsar infinite alternate-reverse 0.5s;
@@ -78,11 +79,17 @@
     </style>
 </head>
 
-<audio autoplay loop>
-  <source src="musica-de-fundo.mp3" type="audio/mpeg">
-</audio>
 
 <body class="absolute bg-red-300 w-dvw h-full">
+    <audio id="meuAudio" loop>
+        <source src="musiquinha.mp3">
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+    <button id="btnMusica" class="fixed bottom-4 right-4 z-50 bg-[#d8247b] text-white p-3 rounded-full shadow-lg font-bold">
+        🎵 Tocar Música
+    </button>
+
+
     <nav class="fixed z-50 bg-linear-to-r to-[#f55da6] from-[#d8247b] flex justify-around items-center h-[10vh] w-dvw">
         <a class=" hover:scale-[135%] transition-all duration-300 ease-in-out" href="#page1"><span class="up">I</span><span class="down">n</span><span class="up">i</span><span class="down">c</span><span class="up">i</span><span class="down">o</span></a>
         <a class=" hover:scale-[135%] transition-all duration-300 ease-in-out" href="#page2"><span class="up">D</span><span class="down">e</span><span class="up">c</span><span class="down">l</span><span class="up">a</span><span class="down">r</span><span class="up">a</span><span class="down">ç</span><span class="up">ã</span><span class="down">o</span></a>
@@ -93,8 +100,7 @@
     <article class="h-full sticky top-0 flex items-center justify-center bg-linear-to-br from-red-400 to-red-500">
         <div class="flex  flex-col place-items-center gap-10 w-auto text-center">
             <div class="heart-wrapler">
-                <img class="w-[7vw] opacity-0 absolute appear rotate-90" src="imagens/fotos/foto18.jpeg" alt="">
-                <img src="imagens/heart.png" class="w-[20vw] md:w-[10vw] heart">
+                <img src="imagens/heart.png" id="heart" class="w-[20vw] md:w-[10vw]">
             </div>
             <p class="text-[2rem]  font-bold font-sans">Feliz dia dos namorados😍 <span class="text-[1.5rem]">(atrasado)</span></p>
         </div>
@@ -103,11 +109,11 @@
 
     <div id="page2"></div>
     <article class="h-full sticky z-10 top-0 flex flex-col items-center justify-center bg-linear-to-br from-red-500 to-red-400">
-        <div class="font-bold font-mono bg-gray-50 w-[80vw] border-2 border-amber-400 rotate-2 p-1 hover:rotate-0 duration-200 rounded-[0.3rem]  h-auto">
+        <div class="font-bold font-mono bg-gray-50 w-[80vw] border-2 border-amber-400 rotate-2 p-1 md:hover:rotate-0 active:rotate-0 duration-200 rounded-[0.3rem]  h-auto">
             <p id="declaracao" class="text-2xl font-mono">Obrigado amor por estar comigo fazendo de cada dia o melhor, sendo essa namorada e pessoa incrivel que você é, te amo vida </p> 
         </div>
         <div>
-            <img id="NPB" class="w-[60vw] md:w-[25vw] m-10 rounded-br-[7rem] rounded-tl-[7rem]  hover:rounded-2xl  hover:rotate-360 hover:scale-[115%]" src="imagens/fotos/foto2.jpeg">
+            <img id="NPB" class="w-[60vw] md:w-[25vw] m-10 rounded-br-[7rem] rounded-tl-[7rem]  hover:rounded-2xl md:hover:rotate-360  active:rotate-360 hover:scale-[115%]" src="imagens/fotos/foto2.jpeg">
         </div>
     </article>
 
@@ -118,22 +124,22 @@
     <h1>Nossas fotos</h1>
 </div>
             <main class="grid grid-cols-4 md:grid-cols-4 w-full gap-1 md:gap-2  justify-center">
-                <img src="imagens/fotos/foto1.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500 hover:rounded-none rounded-tl-2xl" alt="">
-                <img src="imagens/fotos/foto11.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto15.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto13.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500 hover:rounded-none rounded-tr-2xl" alt="">
-                <img src="imagens/fotos/foto2.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto12.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto16.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto9.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto10.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto3.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto4.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto6.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto18.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500 hover:rounded-none rounded-bl-2xl" alt="">
-                <img src="imagens/fotos/foto17.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto14.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500" alt="">
-                <img src="imagens/fotos/foto5.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip hover:scale-125 duration-500 hover:rounded-none rounded-br-2xl" alt="">
+                <img src="imagens/fotos/foto1.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500 hover:rounded-none rounded-tl-2xl" alt="">
+                <img src="imagens/fotos/foto11.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto15.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto13.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500 hover:rounded-none rounded-tr-2xl" alt="">
+                <img src="imagens/fotos/foto2.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto12.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto16.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto9.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto10.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto3.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto4.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto6.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto18.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500 hover:rounded-none rounded-bl-2xl" alt="">
+                <img src="imagens/fotos/foto17.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto14.jpeg" class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500" alt="">
+                <img src="imagens/fotos/foto5.jpeg"  class="m-0 p-0 object-center object-cover h-[12vh] w-[12vh] md:h-[20vh] md:w-[20vh] overflow-clip active:scale-125 md:hover:scale-125 duration-500 hover:rounded-none rounded-br-2xl" alt="">
             </main>
         </div>
     </article>
